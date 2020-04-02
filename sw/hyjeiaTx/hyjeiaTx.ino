@@ -22,12 +22,12 @@ uint8_t payload[100];
 void setup()
 {    
     Serial.begin(57600);
-    Serial.println("NukeDosimeter UV-C Dosimeter v0.5");
+    Serial.println("Hyjeia UV-C Dosimeter v0.5");
 
     chibiInit();
     
     lcd.begin();   
-    lcd.print("Nuke Dosimeter");
+    lcd.print("Hyjeia Dosimeter");
     lcd.setCursor(0, 1);
     lcd.print("v0.5");
     delay(5000);

@@ -12,17 +12,7 @@ uint8_t payload[100];
 void setup()
 {    
     Serial.begin(57600);
-    Serial.println("NukeDosimeter Receiver v0.5");
-
     chibiInit();
-    
-    lcd.begin();   
-    lcd.print("Nuke Dosimeter");
-    lcd.setCursor(0, 1);
-    lcd.print("v0.5");
-    delay(5000);
-    lcd.clear();
-    lcd.setCursor(0, 0);
 }
 
 void loop()
@@ -35,7 +25,7 @@ void loop()
         int rssi, srcAddr;
         uint8_t len;
         
-        len = chibiGetData(buf);
+        len = chibiGetData(payload);
         if (len == 0) return;
         
         // retrieve the data and the signal strength
